@@ -1,0 +1,499 @@
+{% extends "fluxwings/base.html" %}
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fluxwings.com</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<body>
+    {% block content %}
+
+    <div class="bg-dark text-centre p-1 text-white border">
+        <p class="offset-md-1" style="margin-top: 10px; margin-bottom:5px;">
+            <i class="fa fa-envelope me-3" style="color: aqua;"></i>&nbsp <b>director@fluxwings.com |</b>
+            <i class="fa-solid fa-phone" style="color: aqua;"></i>&nbsp <b>9867046535 |</b>
+            <a class="btn btn-outline-primary btn-social" href="https://www.linkedin.com/company/101382841/admin/feed/posts/" style="color: white; margin-left: 100px; margin-top:10px"><i class="fab fa-linkedin-in"></i></a>&nbsp&nbsp&nbsp
+            <a class="btn btn-outline-primary btn-social" href="#" style="color: white; margin-top:10px"><i class="fa-brands fa-facebook"></i></a>&nbsp&nbsp&nbsp
+            <a class="btn btn-outline-primary btn-social" href="#" style="color: white; margin-top:10px"><i class="fa-brands fa-instagram"></i></a>&nbsp&nbsp&nbsp
+        </p>
+    </div>
+    
+    <!-- carousel start -->
+    <div id="carouselIndicators" class="carousel slide" data-bs-ride="carousel">
+
+        <ol class="carousel-indicators">
+            <li type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="0" class="active"></li>
+            <li type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="1"></li>
+        </ol>
+
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="{% static 'carosel/carousel-1.jpg' %}" height="400px" width="1535px" alt="First">
+                <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                    <div class="p-3" style="max-width: 1200px;">
+                        {% comment %} <h5 class="text-white text-uppercase">Business Consultancy</h5> {% endcomment %}
+                        <h5 class="display-5 text-white mb-md-4">We Assist Businesses by Providing Solutions to Their Challenges</h5>
+                        <a href="{% url 'contact' %}" class="btn btn-primary py-md-3 px-md-5 rounded-pill">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <img src="{% static 'carosel/carousel-2.jpg' %}" height="400px" width="1535px" alt="Second">
+                <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                    <div class="p-3" style="max-width: 1000px;">
+                        <h5 class="display-5 text-white mb-md-5">Full Range of Human Resource Services, Customised To Your Needs</h5>
+                        {% comment %} <a href="" class="btn btn-primary py-md-3 px-md-5 me-3 rounded-pill">Get Quote</a> {% endcomment %}
+                        <a href="https://wa.link/80lvht" class="btn btn-primary py-md-3 px-md-5 rounded-pill">Chat With Us</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <button class="carousel-control-prev" data-bs-target="#carouselIndicators" role="button" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </button>
+        <button class="carousel-control-next" data-bs-target="#carouselIndicators" role="button" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </button>
+    </div>
+    <!-- carousel end -->
+
+    <!-- About Us start -->
+    <div class="container-flex bg-dark p-0">
+        <div class="row">
+            <div class="col-lg-7 py-1 px-5">
+                <br><br><h1 class="display-5 mb-2 text-white" style="text-align:center">Welcome To <p><span class="text-warning">FLUXWINGS SOLUTIONS LLP</span></p></h1>
+                <h5 class="mb-4" style="text-align:center; color:yellow; font-size:1.1rem">"Your trusted partner in comprehensive Human Resource solutions."</h5>
+                <p class="mb-4 text-white" style="text-align:justify">
+                    We specialize in <b>HR AUDIT & ADVISORY</b>, ensuring your organization adheres to best practices and regulatory <b>COMPLIANCE</b>. 
+                    Our <b>TALENT ACQUISITION</b> Service help you to find the right fit for your Team, while our <b>EMPLOYEES ENGAGEMENT</b> strategies foster a motivated and productive workforce. 
+                    <p class="mb-4 text-white" style="text-align:justify">Though our <b>LEARNING & DEVELOPMENT</b> programs, we empower your employees with the skills they need to excel. Whether you require <b>MANPOWER AND STAFFING SOLUTIONS</b> or <b>VIRTUAL HR</b> Services, 
+                    we provide tailored support to meet your unique needs. Additionally, our experise in <b>AUTOMATING HR PROCESSES</b> streamlines your operations, enhancing efficiency and effectiveness.</p> 
+                    <p class="mb-4" style="text-align:justify; color:yellow; font-size:18.5px"><span>"Let Fluxwings Solutions help you to build a Stronger & Dynamic workplace."</spans></p>
+                </p>
+                <a href="{% url 'contact' %}" class="btn btn-primary py-md-2 px-md-4 rounded-pill" style="margin-left:100px"><b>Contact Us</b></a>
+            </div>
+            <div class="col-lg-5">
+                <div class="h-100  flex-column justify-content-center bg-primary p-5">
+                    {% for aboutus in ABOUTUS %}
+                        <div class="d-flex text-white mb-4">
+                            <div class="align-items justify-content text-light mx-4" style="width: 60px; height: 60px;">
+                                <h1><i class="fa-solid fa-square-check"></i></h1>
+                            </div>
+                            
+                            <div class="ps-2">
+                                <h3 class="text-white" style="text-align:center; font-size:20px"><b><u>{{ aboutus.about_feature }}</u></b></h3>
+                                <p class="mb-2" style="text-align: justify; font-size:14.5px">{{ aboutus.descriptions }}</p>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div><br>
+    <!-- About Us End -->
+
+    <div class="bg-dark text-centre p-2 text-white border bottom shadow"></div>
+
+    <!-- Services start -->
+    <div class="container-fluid pt-4 px-5">
+        <div class="text-center mx-auto mb-5" style="max-width: 600px;">
+            <h1 class="display-5 mb-0">What We Offer</h1>
+            <hr class="w-25 mx-auto bg-primary">
+        </div>
+        <div class="px-1">
+            <div class="row">
+                {% comment %} {% for services in SERVICES %}
+                <div class="col-lg-6 col-md-6">
+                    <div class="service-item bg-warning text-center px-5"><br>
+                        {% comment %} <div class="d-flex align-itemus-center justify-content-center bg-dark text-white rounded-circle mx-auto mb-4" style="width: 90px; height: 90px;">
+                            <i class="fa fa-user-tie fa-2x"></i>
+                        </div> {% endcomment %}
+                        {% comment %} <a href="{% url 'details_services' services.id %}"><h3 class="mb-3 text-dark">{{ services.service_name }}</h3></a>
+                        <p class="mb-0 text-dark">{{ services.description_services }}</p><br>
+                    </div><br>
+                </div>
+                {% endfor %} {% endcomment %}
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-item text-center bg-warning" style="height: 500px;">
+                        <div class="d-flex align-items-center justify-content-center bg-dark text-white rounded-circle mx-auto mb-4" style="width: 90px; height: 90px;">
+                            <h1><i class="fa-solid fa-square-poll-vertical"></i></h1>
+                        </div>
+                        <h4 class="mb-3"; style="color:darkblue"><u><b>HR Audit and Advisory</b></u></h4>
+                        <h5 class="mb-0 text-dark">
+                            <ul>
+                                <li><h5 style="text-align:left; font-style:italic;">Analysis of Existing Processes</h5></li>
+                                <li><h5 style="text-align:left; font-style:italic;">Detailed Report</h5></li>
+                                <li><h5 style="text-align:left; font-style:italic;">Recommendations</h5></li>
+                                {% comment %} <li><h5 style="text-align:left; font-style:italic;">Optimization and Efficiency</h5></li>
+                                <li><h5 style="text-align:left; font-style:italic;">Formation & Executions of SOPs</h5></li> {% endcomment %}
+                            </ul>
+                        </h5><br>
+                    </div><br>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-item bg-warning text-center" style="height: 500px;">
+                        <div class="d-flex align-items-center justify-content-center bg-dark text-white rounded-circle mx-auto mb-4" style="width: 90px; height: 90px;">
+                            <h1><i class="fa-solid fa-handshake"></i></h1>
+                        </div>
+                        <h4 class="mb-3"; style="color:darkblue"><u><b>Talent Acquisition</b></u></h4>
+                        <h5 class="mb-0 text-dark">
+                            <ul>
+                                <li><h5 style="text-align:left; font-style:italic;">Recruiting Top Candidates</h5></li>
+                                <li><h5 style="text-align:left; font-style:italic;">Screening Interview</h5></li>
+                                {% comment %} <li><h5 style="text-align:left; font-style:italic;">Evaluation before referring</h5></li> {% endcomment %}
+                                <li><h5 style="text-align:left; font-style:italic;">Assisted interview with employer</h5></li>
+                                {% comment %} <li><h5 style="text-align:left; font-style:italic;">Special Expertise in VETERAN HIRING</h5></li> {% endcomment %}
+                            </ul>
+                        </h5><br>
+                    </div><br>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-item bg-warning text-center" style="height: 500px;">
+                        <div class="d-flex align-items-center justify-content-center bg-dark text-white rounded-circle mx-auto mb-4" style="width: 90px; height: 90px;">
+                            <h1><i class="fa-solid fa-book-open-reader"></i></h1>
+                        </div>
+                        <h4 class="mb-3"; style="color:darkblue"><u><b>Learning and Development</b></u></h4>
+                        <h5 class="mb-0 text-dark">
+                            <ul>
+                                <li><h5 style="text-align:left; font-style:italic;">Assessment of Skill Gaps</h5></li>
+                                <li><h5 style="text-align:left; font-style:italic;">Designing outcome-oriented L&D</h5></li>
+                                <li><h5 style="text-align:left; font-style:italic;">Smooth conduct / Evaluation</h5></li>
+                                {% comment %} <li><h5 style="text-align:left; font-style:italic;">Feedback</h5></li> {% endcomment %}
+                                {% comment %} <li><h5 style="text-align:left; font-style:italic;">Evaluation of Impact</h5></li> {% endcomment %}
+                            </ul>
+                        </h5><br>
+                    </div><br>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-item bg-warning text-center px-5" style="height: 500px;">
+                        <div class="d-flex align-items-center justify-content-center bg-dark text-white rounded-circle mx-auto mb-4" style="width: 90px; height: 90px;">
+                            <h1><i class="fa-solid fa-masks-theater"></i></h1>
+                        </div>
+                        <h4 class="mb-3"; style="color:darkblue"><u><b>Employee Engagement</b></u></h4>
+                        <h5 class="mb-0 text-dark">
+                            <ul>
+                                <li><h5 style="text-align:left; font-style:italic;">Engagement Survey & Report</h5></li>
+                                <li><h5 style="text-align:left; font-style:italic;">Inspirational Team Building Activities</h5></li>
+                                <li><h5 style="text-align:left; font-style:italic;">Customized Employee Engagement Packages</h5></li>
+                                {% comment %} <li><h5 style="text-align:left; font-style:italic;">Engagement Survey & Report</h5></li> {% endcomment %}
+                            </ul>
+                        </h5><br>
+                    </div><br>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-item bg-warning text-center px-5" style="height: 500px;">
+                        <div class="d-flex align-items-center justify-content-center bg-dark text-white rounded-circle mx-auto" style="width: 90px; height: 90px;">
+                            <h1><i class="fa-solid fa-users"></i></h1>
+                        </div>
+                        <h4 class="mb-3"; style="color:darkblue"><u><b>Manpower & Staffing Solutions</b></u></h4>
+                        <h5 class="mb-0 text-dark">
+                            <ul>
+                                <li><h5 style="text-align:left; font-style:italic;">Onsite Managed Workforce</h5></li>
+                                <li><h5 style="text-align:left; font-style:italic;">Project Staffing by temporary workforce</h5></li>
+                                {% comment %} <li><h5 style="text-align:left; font-style:italic;">Qualified Talent</h5></li> {% endcomment %}
+                                <li><h5 style="text-align:left; font-style:italic;">Flexibility to meet client needs</h5></li>
+                            </ul>
+                        </h5><br>
+                    </div><br>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-item bg-warning text-center px-5" style="height: 500px;">
+                        <div class="d-flex align-items-center justify-content-center bg-dark text-white rounded-circle mx-auto mb-4" style="width: 90px; height: 90px;">
+                            <h1><i class="fa-solid fa-sack-dollar"></i></h1>
+                        </div>
+                        <h4 class="mb-3"; style="color:darkblue"><u><b>Compliance</b></u></h4>
+                        <h5 class="mb-0 text-dark">
+                            <ul>
+                                <li><h5 style="text-align:left; font-style:italic;">Statutory HR Compliance</h5></li>
+                                {% comment %} <li><h5 style="text-align:left; font-style:italic;">Financial Compliance</h5></li> {% endcomment %}
+                                <li><h5 style="text-align:left; font-style:italic;">Industry specific Compliance</h5></li>
+                                <li><h5 style="text-align:left; font-style:italic;">Automation of Overall Compliances of Client</h5></li>
+                            </ul>
+                        </h5><br>
+                    </div><br>
+                </div>
+
+                <div class="col-lg-4 col-md-6 offset-md-2">
+                    <div class="service-item bg-warning text-center px-5" style="height: 500px;">
+                        <div class="d-flex align-items-center justify-content-center bg-dark text-white rounded-circle mx-auto mb-4" style="width: 90px; height: 90px;">
+                            <h1><i class="fa-solid fa-network-wired"></i></h1>
+                        </div>
+                        <h4 class="mb-3"; style="color:darkblue"><u><b>Automation of HR Process</b></u></h4>
+                        <h5 class="mb-0 text-dark">
+                            <ul>
+                                <li><h5 style="text-align:left; font-style:italic;">Need to Automate HR Processes?</h5></li>
+                                {% comment %} <li><h5 style="text-align:left; font-style:italic;">Looking for suitable HRMS/HRIS?</h5></li> {% endcomment %}
+                                <li><h5 style="text-align:left; font-style:italic;">We can assist you in selecting suitable HRMS/HRIS</h5></li>
+                                <li><h5 style="text-align:left; font-style:italic;">We can execute/onboard the organization</h5></li>
+                                <!-- <li><h5 style="text-align:left; font-style:italic;">We can externally administer & operate</h5></li> -->
+                            </ul>
+                        </h5><br>
+                    </div><br>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-item bg-warning text-center px-5" style="height: 500px;">
+                        <div class="d-flex align-items-center justify-content-center bg-dark text-white rounded-circle mx-auto mb-4" style="width: 90px; height: 90px;">
+                            <h1><i class="fa-solid fa-hand-holding-heart"></i></h1>
+                        </div>
+                        <h4 class="mb-3"; style="color:darkblue"><u><b>Virtual HR</b></u></h4>
+                        <h5 class="mb-0 text-dark">
+                            <ul>
+                                {% comment %} <li><h5 style="text-align:left; font-style:italic;">Are you a small company or startup?</h5></li> {% endcomment %}
+                                <li><h5 style="text-align:left; font-style:italic;">Cannot afford an HR Department?</h5></li>
+                                <li><h5 style="text-align:left; font-style:italic;">We can provide assistance remotely</h5></li>
+                                <li><h5 style="text-align:left; font-style:italic;">Reduced Cost, enhanced Efficiency</h5></li>
+                                <!-- <li><h5 style="text-align:left; font-style:italic;">Functioning aligned to Organizational Goals</h5></li> -->
+                            </ul>
+                        </h5><br>
+                    </div><br>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Services End -->
+
+    <div class="bg-dark text-centre p-2 text-white border bottom shadow"></div>
+
+    <!-- Why Choose Us/Features start -->
+    <div class="container-fluid py-4 px-5">
+        <div class="text-center mx-auto mb-5" style="max-width: 600px;">
+            <h1 class="display-5 mb-0">Why Choose Us!!!</h1>
+            <hr class="w-20 mx-auto bg-primary">
+        </div>
+    </div>
+    <!-- <div class="col-md-6">
+        <div class="offset-md-3 col-lg-12"> -->
+            <div class="container-flex">
+                <div class="row">
+                    <div class="col-md-4 offset-md-1 bg-dark offset-md-2">
+                        <img class="col" style="height:400px" src="{% static 'FEATURE/feature1.jpg' %}"><br>
+                        <br><h3 class="text-white" style="text-align: justify; font-size:20px">
+                            <p>Our Commitment to professionalism ensures that you receive the highest quality of service with every interaction. 
+                            We pride ourselves on the Lowest Turnaround Times in the industry, ensuring your HR needs are met promptly and efficiently.</p> 
+                            <p>Our foundation is built on Military Ethics, providing you with unparalleled discipline, integrity and reliability. 
+                            We prioritize Confidentiality, safeguarding your sensitive information with the utmost care.</p> 
+                            <p>By leveraging cutting-edge Technology, we streamline processes and deliver innovative solutions tailored to your unique requirements. 
+                            Partner with Fluxwings Solutions for a seamless, Trustworthy and Advanced HR Experience.</p>
+                        </h3><br>
+                        <a href="{% url 'contact' %}" class="btn btn-light py-md-2 px-md-5 rounded-pill mb-2 offset-md-4">Contact Us</a>
+                    </div>
+                    <div class="container-flex">
+                        <br><div class="col-md-12" style="margin-left:40px; border-radius: 10px; border-width: px; border: solid;">
+                        <br><div class="d-flex bg-primary rounded-circle align-items-center justify-content-center mx-auto mb-6" style="width: 60px; height: 60px;">
+                                <h1><i class="fa fa-user-tie fa"></i></h1>
+                            </div>
+                            <h3 style="margin-left:30px">Professionalism</h3>
+                        </div>
+                        <br><div class="col-md-12" style="margin-left:40px; border-radius: 10px; border-width: px; border: solid;">
+                            <br><div class="d-flex bg-primary rounded-circle align-items-center justify-content-center mx-auto mb-6" style="width: 60px; height: 60px;">
+                                <h1><i class="fa-solid fa-plane-up"></i></h1>
+                            </div>
+                            <h3 style="margin-left:35px">Lowest TA Time</h3>
+                        </div>
+                        <br><div class="col-md-12" style="margin-left:40px; border-radius: 10px; border-width: px; border: solid;">
+                        <br><div class="d-flex bg-primary rounded-circle align-items-center justify-content-center mx-auto mb-6" style="width: 60px; height: 60px;">
+                                <h1><i class="fa-solid fa-person-military-rifle"></i></h1>
+                            </div>
+                            <h3 style="margin-left:38px">Military Ethics</h3>
+                        </div>
+                        <br><div class="col-md-12" style="margin-left:40px; border-radius: 10px; border-width: px; border: solid;">
+                        <br><div class="d-flex bg-primary rounded-circle align-items-center justify-content-center mx-auto mb-6" style="width: 60px; height: 60px;">
+                                <h2><i class="fa-solid fa-file-shield"></i></h2>
+                            </div>
+                            <h3 style="margin-left:35px">Confidentiality</h3>
+                        </div>
+                        <br><div class="col-md-12" style="margin-left:40px; border-radius: 10px; border-width: px; border: solid;">
+                        <br><div class="d-flex bg-primary rounded-circle align-items-center justify-content-center mx-auto mb-6" style="width: 60px; height: 60px;">
+                                <h1><i class="fa-solid fa-award"></i></h1>
+                            </div>
+                            <h3 style="margin-left:40px">Customization</h3>
+                        </div>
+                        <br><div class="col-md-12" style="margin-left:40px; border-radius: 10px; border-width: px; border: solid;">
+                        <br><div class="d-flex bg-primary rounded-circle align-items-center justify-content-center mx-auto mb-6" style="width: 60px; height: 60px;">
+                                <h2><i class="fa-solid fa-computer"></i></h2>
+                            </div>
+                            <h3 style="margin-left:30px">Leveraging Tech</h3>
+                        </div>
+                    </div>
+                </div>
+            </div><br>
+                    <!-- <h6 class="text-white" style="text-align: justify; font-size:1rem">
+                            Our Commitment to professionalism ensures that you receive the highest quality of service with every interaction. 
+                            We pride ourselves on the Lowest Turnaround Times in the industry, ensuring your HR needs are met promptly and efficiently. 
+                            Our foundation is built on Military Ethics, providing you with unparalleled discipline, integrity and reliability. 
+                            We prioritize Confidentiality, safeguarding your sensitive information with the utmost care. 
+                            By leveraging cutting-edge Technology, we streamline processes and deliver innovative solutions tailored to your unique requirements. 
+                            Partner with Fluxwings Solutions for a seamless, Trustworthy and Advanced HR Experience.
+                    </h6><br> -->
+                    <!-- <a href="{% url 'contact' %}" class="btn btn-light py-md-3 px-md-5 rounded-pill mb-2">Contact Us</a> -->
+                    
+        
+                <!-- {% for why_choose_us in WHYCHOOSEUS %}
+                <br><br><div class="offset-md-1 col-md-3">
+                <br><div class="d-flex bg-primary rounded-circle align-items-center justify-content-center mx-auto mb-6" style="width: 60px; height: 60px;">
+                        <h3><i class="fa-solid fa-award"></i></h3>
+                    </div>
+                    <h3>{{ why_choose_us.feature }}</h3>
+                    <p class="mb-1">{{ why_choose_us.description_whychooseus }}</p><br>
+                </div>
+                {% endfor %} -->
+                <!-- <div>
+                    <br><br><div class="col-md-3" style="margin-left:40px">
+                    <br><div class="d-flex bg-primary rounded-circle align-items-center justify-content-center mx-auto mb-6" style="width: 60px; height: 60px;">
+                            <h1><i class="fa fa-user-tie fa"></i></h1>
+                        </div>
+                        <h3 style="margin-left:10px">Professionalism</h3>
+                    </div>
+                    <div class="offset-md-1 col-md-6">
+                    <br><div class="d-flex bg-primary rounded-circle align-items-center justify-content-center mx-auto mb-6" style="width: 60px; height: 60px;">
+                            <h1><i class="fa-solid fa-plane-up"></i></h1>
+                        </div>
+                        <h3 style="margin-left:10px">Lowest TA Time</h3>
+                    </div>
+                    <br><br><div class="offset-md-1 col-md-3">
+                    <br><div class="d-flex bg-primary rounded-circle align-items-center justify-content-center mx-auto mb-6" style="width: 60px; height: 60px;">
+                            <h1><i class="fa-solid fa-person-military-rifle"></i></h1>
+                        </div>
+                        <h3 style="margin-left:18px">Military Ethics</h3>
+                    </div>
+                    <br><br><div class="col-md-3" style="margin-left:40px">
+                    <br><div class="d-flex bg-primary rounded-circle align-items-center justify-content-center mx-auto mb-6" style="width: 60px; height: 60px;">
+                            <h2><i class="fa-solid fa-file-shield"></i></h2>
+                        </div>
+                        <h3 style="margin-left:15px">Confidentiality</h3>
+                    </div>
+                    <br><br><div class="offset-md-1 col-md-3">
+                    <br><div class="d-flex bg-primary rounded-circle align-items-center justify-content-center mx-auto mb-6" style="width: 60px; height: 60px;">
+                            <h1><i class="fa-solid fa-award"></i></h1>
+                        </div>
+                        <h3 style="margin-left:18px">Customization</h3>
+                    </div>
+                    <br><br><div class="offset-md-1 col-md-3">
+                    <br><div class="d-flex bg-primary rounded-circle align-items-center justify-content-center mx-auto mb-6" style="width: 60px; height: 60px;">
+                            <h2><i class="fa-solid fa-computer"></i></h2>
+                        </div>
+                        <h3 style="margin-left:20px">Leveraging Tech</h3>
+                    </div>
+                </div>
+             -->
+        <!-- </div>
+    </div><br> -->
+    <!-- Why Choose Us/Features end -->
+
+    <div class="bg-dark text-centre p-2 text-white border bottom shadow"></div>
+
+    {% comment %} contact us start {% endcomment %}
+    <br><div class="text-center mx-auto mb-5" style="max-width: 600px;">
+        <h1 class="display-5 mb-0">Contact Us</h1>
+        <hr class="w-25 mx-auto bg-primary">
+    </div>
+
+    {% comment %} <div class="offset-md-4">
+        <h4>Please fill your contact details below.</h4>
+    </div><br> {% endcomment %}
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3 bg-dark">
+                <div class="card bg-warning"><br><br>
+                    <div class="card-header text-white bg-dark text-center">
+                        <div class="card-title">
+                            <h4><b>Contact Details Form</b></h4>
+                        </div>
+                    </div>
+                    <div class="card-body offset-md-2">
+                        <form method="POST">
+                            {% csrf_token %}
+
+                            <br><label><h5><b>Your Full Name: <b style="color:red">*</b></b></b></h5></label><br>
+                            {{ form.cust_name }}
+            
+                            <br><br><label><h5><b>Email Id: <b style="color:red">*</b></b></b></h5></label><br>
+                            {{ form.email_id }}
+                                
+                            <br><br><label><h5><b>Contact Number: <b style="color:red">*</b></b></b></h5></label><br>
+                            {{ form.mobile_no }}
+                                
+                            <br><br><label><h5><b>WhatsApp Contact Number: <b style="color:red">*</b></b></b></h5></label><br>
+                            {{ form.whatsapp_no }}
+                                
+                            <br><br><label><h5><b>Required Services: <b style="color:red">*</b></b></b></h5></label><br>
+                            {{ form.services_required }}
+                                
+                            <br><br><label><h5><b>Query: </b></h5></label><br>
+                            {{ form.query }}
+                                
+                            <br><br><button type="submit" class="btn btn-dark btn btn-sm offset-md-2" style="width:200px;"><h3>Submit</h3></button> 
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><br>
+
+    <div class="bg-dark text-centre p-2 text-white border bottom shadow"></div>
+
+    {% comment %} contact us end {% endcomment %}
+
+    {% comment %} footer start {% endcomment %}
+        <br><div class="container-fluid bg-dark text-white p-5">
+            <div class="row g-5">
+                <div class="col-lg-3 col-md-6">
+                    <h3 class="text-warning mb-4">Quick Links</h3>
+                    <div class="d-flex flex-column justify-content-start">
+                        <a class="text-white mb-2" href="{% url 'index' %}"><i class="bi bi-arrow-right text-primary me-2"></i>Home</a>
+                        <a class="text-white mb-2" href="{% url 'about_us' %}"><i class="bi bi-arrow-right text-primary me-2"></i>About Us</a>
+                        <a class="text-white mb-2" href="{% url 'service' %}"><i class="bi bi-arrow-right text-primary me-2"></i>Our Services</a>
+                        {% comment %} <a class="text-white mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>Latest Blog Post</a> {% endcomment %}
+                        <a class="text-white" href="{% url 'contact' %}"><i class="bi bi-arrow-right text-primary me-2"></i>Contact Us</a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h3 class="text-warning mb-4">Get In Touch</h3>
+                    {% comment %} <p class="mb-2"><i class="bi bi-geo-alt text-primary me-2"></i>123 Street, New York, USA</p> {% endcomment %}
+                    <div class="row"><h3 style="font-size:1.2rem"><i class="fa-solid fa-envelope-circle-check"></i>&nbsp director@fluxwings.com</h3></div>
+                    <div class="row"><h3 style="font-size:1.2rem"><i class="fa-solid fa-mobile-retro"></i>&nbsp +91 9867046535</h3></div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h3 class="text-warning mb-4">Follow Us</h3>
+                    <div class="d-flex">
+                        {% comment %} <a class="btn btn-lg btn-primary btn-lg-square rounded-circle me-2" href="#"><i class="fab fa-twitter fw-normal"></i></a> {% endcomment %}
+                        <a class="btn btn-lg btn-primary btn-lg-square rounded-circle me-2" href="#"><i class="fab fa-facebook-f fw-normal"></i></a>
+                        <a class="btn btn-lg btn-primary btn-lg-square rounded-circle me-2" href="https://www.linkedin.com/company/101382841/admin/feed/posts/"><i class="fab fa-linkedin-in fw-normal"></i></a>
+                        <a class="btn btn-lg btn-primary btn btn-lg-rounded rounded-circle me-2" href="#"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid bg-dark text-white text-center border-top py-4 px-5" style="border-color: rgba(256, 256, 256, .1) !important;">
+            <p class="m-0">&copy; <a class="text-white border-bottom" href="#">FLUXWINGS SOLUTIONS</a>. All Rights Reserved.</p>
+        </div>
+
+    {% comment %} footer end {% endcomment %}
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+   
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+    {% endblock %}
+</body>
+</html>

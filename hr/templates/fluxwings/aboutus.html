@@ -1,0 +1,87 @@
+{% extends 'fluxwings/base.html' %}
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% block content %}
+
+    <div class="text-center mx-auto mb-5" style="max-width: 600px;">
+        <h1 class="display-5 mb-0">About Us</h1>
+        <hr class="w-25 mx-auto bg-primary">
+    </div>
+
+    <div class="container-flex bg-dark p-0">
+        <div class="row">
+            <div class="col-lg-7 py-1 px-5">
+                <br><br><h1 class="display-5 mb-2 text-white" style="text-align:center">Welcome To <p><span class="text-warning">FLUXWINGS SOLUTIONS LLP</span></p></h1>
+                <h5 class="mb-4" style="text-align:center; color:yellow; font-size:1.1rem">"Your trusted partner in comprehensive Human Resource solutions."</h5>
+                <p class="mb-4 text-white" style="text-align:justify">
+                    We specialize in <b>HR AUDIT & ADVISORY</b>, ensuring your organization adheres to best practices and regulatory <b>COMPLIANCE</b>. 
+                    Our <b>TALENT ACQUISITION</b> Service help you to find the right fit for your Team, while our <b>EMPLOYEES ENGAGEMENT</b> strategies foster a motivated and productive workforce. 
+                    <p class="mb-4 text-white" style="text-align:justify">Though our <b>LEARNING & DEVELOPMENT</b> programs, we empower your employees with the skills they need to excel. Whether you require <b>MANPOWER AND STAFFING SOLUTIONS</b> or <b>VIRTUAL HR</b> Services, 
+                    we provide tailored support to meet your unique needs. Additionally, our experise in <b>AUTOMATING HR PROCESSES</b> streamlines your operations, enhancing efficiency and effectiveness.</p> 
+                    <p class="mb-4" style="text-align:justify; color:yellow; font-size:18.5px"><span>"Let Fluxwings Solutions help you to build a Stronger & Dynamic workplace."</spans></p>
+                </p>
+                <a href="{% url 'contact' %}" class="btn btn-primary py-md-2 px-md-4 rounded-pill" style="margin-left:100px"><b>Contact Us</b></a>
+            </div>
+            <div class="col-lg-5">
+                <div class="h-100  flex-column justify-content-center bg-primary p-5">
+                    {% for aboutus in ABOUTUS %}
+                        <div class="d-flex text-white mb-4">
+                            <div class="align-items justify-content text-light mx-4" style="width: 60px; height: 60px;">
+                                <h1><i class="fa-solid fa-square-check"></i></h1>
+                            </div>
+                            
+                            <div class="ps-2">
+                                <h3 class="text-white" style="text-align:center; font-size:20px"><b><u>{{ aboutus.about_feature }}</u></b></h3>
+                                <p class="mb-2" style="text-align: justify; font-size:14.5px">{{ aboutus.descriptions }}</p>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div><br>
+
+    <br><div class="container-fluid bg-dark text-white p-5">
+        <div class="row g-5">
+            <div class="col-lg-3 col-md-6">
+                <h3 class="text-warning mb-4">Quick Links</h3>
+                <div class="d-flex flex-column justify-content-start">
+                    <a class="text-white mb-2" href="{% url 'index' %}"><i class="bi bi-arrow-right text-primary me-2"></i>Home</a>
+                    <a class="text-white mb-2" href="{% url 'about_us' %}"><i class="bi bi-arrow-right text-primary me-2"></i>About Us</a>
+                    <a class="text-white mb-2" href="{% url 'service' %}"><i class="bi bi-arrow-right text-primary me-2"></i>Our Services</a>
+                    {% comment %} <a class="text-white mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>Latest Blog Post</a> {% endcomment %}
+                    <a class="text-white" href="{% url 'contact' %}"><i class="bi bi-arrow-right text-primary me-2"></i>Contact Us</a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <h3 class="text-warning mb-4">Get In Touch</h3>
+                {% comment %} <p class="mb-2"><i class="bi bi-geo-alt text-primary me-2"></i>123 Street, New York, USA</p> {% endcomment %}
+                <div class="row"><h3 style="font-size:1.2rem"><i class="fa-solid fa-envelope-circle-check"></i>&nbsp director@fluxwings.com</h3></div>
+                    <div class="row"><h3 style="font-size:1.2rem"><i class="fa-solid fa-mobile-retro"></i>&nbsp +91 9867046535</h3></div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <h3 class="text-warning mb-4">Follow Us</h3>
+                <div class="d-flex">
+                    {% comment %} <a class="btn btn-lg btn-primary btn-lg-square rounded-circle me-2" href="#"><i class="fab fa-twitter fw-normal"></i></a> {% endcomment %}
+                    <a class="btn btn-lg btn-primary btn-lg-square rounded-circle me-2" href="#"><i class="fab fa-facebook-f fw-normal"></i></a>
+                    <a class="btn btn-lg btn-primary btn-lg-square rounded-circle me-2" href="https://www.linkedin.com/company/101382841/admin/feed/posts/"><i class="fab fa-linkedin-in fw-normal"></i></a>
+                    <a class="btn btn-lg btn-primary btn-lg-square rounded-circle" href="#"><i class="fab fa-instagram fw-normal"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid bg-dark text-white text-center border-top py-4 px-5" style="border-color: rgba(256, 256, 256, .1) !important;">
+        <p class="m-0">&copy; <a class="text-white border-bottom" href="#">FLUXWINGS SOLUTIONS</a>. All Rights Reserved.</p>
+    </div>
+    {% endblock %}
+</body>
+</html>

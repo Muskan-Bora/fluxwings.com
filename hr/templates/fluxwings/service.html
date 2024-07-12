@@ -1,0 +1,200 @@
+{% extends 'fluxwings/base.html' %}
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/services.css' %}">
+</head>
+<body>
+    {% block content %}
+    <div class="container-fluid pt-3 px-5">
+        <div class="text-center mx-auto mb-5" style="max-width: 600px;">
+            <h1 class="display-5 mb-0">What We Offer</h1>
+            <hr class="w-25 mx-auto bg-primary">
+        </div>
+        <div class="container-fluid pt-3 px-8">
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-item text-center bg-warning" style="height: 500px;">
+                        <div class="d-flex align-items-center justify-content-center bg-dark text-white rounded-circle mx-auto mb-4" style="width: 90px; height: 90px;">
+                            <h1><i class="fa-solid fa-square-poll-vertical"></i></h1>
+                        </div>
+                        <h4 class="mb-3"; style="color:darkblue"><u><b>HR Audit and Advisory</b></u></h4>
+                        <h5 class="mb-0 text-dark">
+                            <ul>
+                                <li><h5 style="text-align:left; font-style:italic;">Analysis of Existing Processes</h5></li>
+                                <li><h5 style="text-align:left; font-style:italic;">Detailed Report</h5></li>
+                                <li><h5 style="text-align:left; font-style:italic;">Recommendations</h5></li>
+                                {% comment %} <li><h5 style="text-align:left; font-style:italic;">Optimization and Efficiency</h5></li>
+                                <li><h5 style="text-align:left; font-style:italic;">Formation & Executions of SOPs</h5></li> {% endcomment %}
+                            </ul>
+                        </h5><br>
+                    </div><br>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-item bg-warning text-center" style="height: 500px;">
+                        <div class="d-flex align-items-center justify-content-center bg-dark text-white rounded-circle mx-auto mb-4" style="width: 90px; height: 90px;">
+                            <h1><i class="fa-solid fa-handshake"></i></h1>
+                        </div>
+                        <h4 class="mb-3"; style="color:darkblue"><u><b>Talent Acquisition</b></u></h4>
+                        <h5 class="mb-0 text-dark">
+                            <ul>
+                                <li><h5 style="text-align:left; font-style:italic;">Recruiting Top Candidates</h5></li>
+                                <li><h5 style="text-align:left; font-style:italic;">Screening Interview</h5></li>
+                                {% comment %} <li><h5 style="text-align:left; font-style:italic;">Evaluation before referring</h5></li> {% endcomment %}
+                                <li><h5 style="text-align:left; font-style:italic;">Assisted interview with employer</h5></li>
+                                {% comment %} <li><h5 style="text-align:left; font-style:italic;">Special Expertise in VETERAN HIRING</h5></li> {% endcomment %}
+                            </ul>
+                        </h5><br>
+                    </div><br>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-item bg-warning text-center" style="height: 500px;">
+                        <div class="d-flex align-items-center justify-content-center bg-dark text-white rounded-circle mx-auto mb-4" style="width: 90px; height: 90px;">
+                            <h1><i class="fa-solid fa-book-open-reader"></i></h1>
+                        </div>
+                        <h4 class="mb-3"; style="color:darkblue"><u><b>Learning and Development</b></u></h4>
+                        <h5 class="mb-0 text-dark">
+                            <ul>
+                                <li><h5 style="text-align:left; font-style:italic;">Assessment of Skill Gaps</h5></li>
+                                <li><h5 style="text-align:left; font-style:italic;">Designing outcome-oriented L&D</h5></li>
+                                <li><h5 style="text-align:left; font-style:italic;">Smooth conduct / Evaluation</h5></li>
+                                {% comment %} <li><h5 style="text-align:left; font-style:italic;">Feedback</h5></li> {% endcomment %}
+                                {% comment %} <li><h5 style="text-align:left; font-style:italic;">Evaluation of Impact</h5></li> {% endcomment %}
+                            </ul>
+                        </h5><br>
+                    </div><br>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-item bg-warning text-center px-5" style="height: 500px;">
+                        <div class="d-flex align-items-center justify-content-center bg-dark text-white rounded-circle mx-auto mb-4" style="width: 90px; height: 90px;">
+                            <h1><i class="fa-solid fa-masks-theater"></i></h1>
+                        </div>
+                        <h4 class="mb-3"; style="color:darkblue"><u><b>Employee Engagement</b></u></h4>
+                        <h5 class="mb-0 text-dark">
+                            <ul>
+                                <li><h5 style="text-align:left; font-style:italic;">Engagement Survey & Report</h5></li>
+                                <li><h5 style="text-align:left; font-style:italic;">Inspirational Team Building Activities</h5></li>
+                                <li><h5 style="text-align:left; font-style:italic;">Customized Employee Engagement Packages</h5></li>
+                                {% comment %} <li><h5 style="text-align:left; font-style:italic;">Engagement Survey & Report</h5></li> {% endcomment %}
+                            </ul>
+                        </h5><br>
+                    </div><br>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-item bg-warning text-center px-5" style="height: 500px;">
+                        <div class="d-flex align-items-center justify-content-center bg-dark text-white rounded-circle mx-auto" style="width: 90px; height: 90px;">
+                            <h1><i class="fa-solid fa-users"></i></h1>
+                        </div>
+                        <h4 class="mb-3"; style="color:darkblue"><u><b>Manpower & Staffing Solutions</b></u></h4>
+                        <h5 class="mb-0 text-dark">
+                            <ul>
+                                <li><h5 style="text-align:left; font-style:italic;">Onsite Managed Workforce</h5></li>
+                                <li><h5 style="text-align:left; font-style:italic;">Project Staffing by temporary workforce</h5></li>
+                                {% comment %} <li><h5 style="text-align:left; font-style:italic;">Qualified Talent</h5></li> {% endcomment %}
+                                <li><h5 style="text-align:left; font-style:italic;">Flexibility to meet client needs</h5></li>
+                            </ul>
+                        </h5><br>
+                    </div><br>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-item bg-warning text-center px-5" style="height: 500px;">
+                        <div class="d-flex align-items-center justify-content-center bg-dark text-white rounded-circle mx-auto mb-4" style="width: 90px; height: 90px;">
+                            <h1><i class="fa-solid fa-sack-dollar"></i></h1>
+                        </div>
+                        <h4 class="mb-3"; style="color:darkblue"><u><b>Compliance</b></u></h4>
+                        <h5 class="mb-0 text-dark">
+                            <ul>
+                                <li><h5 style="text-align:left; font-style:italic;">Statutory HR Compliance</h5></li>
+                                {% comment %} <li><h5 style="text-align:left; font-style:italic;">Financial Compliance</h5></li> {% endcomment %}
+                                <li><h5 style="text-align:left; font-style:italic;">Industry specific Compliance</h5></li>
+                                <li><h5 style="text-align:left; font-style:italic;">Automation of Overall Compliances of Client</h5></li>
+                            </ul>
+                        </h5><br>
+                    </div><br>
+                </div>
+
+                <div class="col-lg-4 col-md-6 offset-md-2">
+                    <div class="service-item bg-warning text-center px-5" style="height: 500px;">
+                        <div class="d-flex align-items-center justify-content-center bg-dark text-white rounded-circle mx-auto mb-4" style="width: 90px; height: 90px;">
+                            <h1><i class="fa-solid fa-network-wired"></i></h1>
+                        </div>
+                        <h4 class="mb-3"; style="color:darkblue"><u><b>Automation of HR Process</b></u></h4>
+                        <h5 class="mb-0 text-dark">
+                            <ul>
+                                <li><h5 style="text-align:left; font-style:italic;">Need to Automate HR Processes?</h5></li>
+                                {% comment %} <li><h5 style="text-align:left; font-style:italic;">Looking for suitable HRMS/HRIS?</h5></li> {% endcomment %}
+                                <li><h5 style="text-align:left; font-style:italic;">We can assist you in selecting suitable HRMS/HRIS</h5></li>
+                                <li><h5 style="text-align:left; font-style:italic;">We can execute/onboard the organization</h5></li>
+                                <!-- <li><h5 style="text-align:left; font-style:italic;">We can externally administer & operate</h5></li> -->
+                            </ul>
+                        </h5><br>
+                    </div><br>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-item bg-warning text-center px-5" style="height: 500px;">
+                        <div class="d-flex align-items-center justify-content-center bg-dark text-white rounded-circle mx-auto mb-4" style="width: 90px; height: 90px;">
+                            <h1><i class="fa-solid fa-hand-holding-heart"></i></h1>
+                        </div>
+                        <h4 class="mb-3"; style="color:darkblue"><u><b>Virtual HR</b></u></h4>
+                        <h5 class="mb-0 text-dark">
+                            <ul>
+                                {% comment %} <li><h5 style="text-align:left; font-style:italic;">Are you a small company or startup?</h5></li> {% endcomment %}
+                                <li><h5 style="text-align:left; font-style:italic;">Cannot afford an HR Department?</h5></li>
+                                <li><h5 style="text-align:left; font-style:italic;">We can provide assistance remotely</h5></li>
+                                <li><h5 style="text-align:left; font-style:italic;">Reduced Cost, enhanced Efficiency</h5></li>
+                                <!-- <li><h5 style="text-align:left; font-style:italic;">Functioning aligned to Organizational Goals</h5></li> -->
+                            </ul>
+                        </h5><br>
+                    </div><br>
+                </div>
+            </div>
+        </div>
+    </div><br>
+
+    <br><div class="container-fluid bg-dark text-white p-5">
+        <div class="row g-5">
+            <div class="col-lg-3 col-md-6">
+                <h3 class="text-warning mb-4">Quick Links</h3>
+                <div class="d-flex flex-column justify-content-start">
+                    <a class="text-white mb-2" href="{% url 'index' %}"><i class="bi bi-arrow-right text-primary me-2"></i>Home</a>
+                    <a class="text-white mb-2" href="{% url 'about_us' %}"><i class="bi bi-arrow-right text-primary me-2"></i>About Us</a>
+                    <a class="text-white mb-2" href="{% url 'service' %}"><i class="bi bi-arrow-right text-primary me-2"></i>Our Services</a>
+                    <!-- <a class="text-white mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>Latest Blog Post</a> -->
+                    <a class="text-white" href="{% url 'contact' %}"><i class="bi bi-arrow-right text-primary me-2"></i>Contact Us</a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <h3 class="text-warning mb-4">Get In Touch</h3>
+                {% comment %} <p class="mb-2"><i class="bi bi-geo-alt text-primary me-2"></i>123 Street, New York, USA</p> {% endcomment %}
+                <div class="row"><h3 style="font-size:1.2rem"><i class="fa-solid fa-envelope-circle-check"></i>&nbsp director@fluxwings.com</h3></div>
+                    <div class="row"><h3 style="font-size:1.2rem"><i class="fa-solid fa-mobile-retro"></i>&nbsp +91 9867046535</h3></div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <h3 class="text-warning mb-4">Follow Us</h3>
+                <div class="d-flex">
+                    {% comment %} <a class="btn btn-lg btn-primary btn-lg-square rounded-circle me-2" href="#"><i class="fab fa-twitter fw-normal"></i></a> {% endcomment %}
+                    <a class="btn btn-lg btn-primary btn-lg-square rounded-circle me-2" href="#"><i class="fab fa-facebook-f fw-normal"></i></a>
+                    <a class="btn btn-lg btn-primary btn-lg-square rounded-circle me-2" href="https://www.linkedin.com/company/101382841/admin/feed/posts/"><i class="fab fa-linkedin-in fw-normal"></i></a>
+                    <a class="btn btn-lg btn-primary btn-lg-square rounded-circle" href="#"><i class="fab fa-instagram fw-normal"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid bg-dark text-white text-center border-top py-4 px-5" style="border-color: rgba(256, 256, 256, .1) !important;">
+        <p class="m-0">&copy; <a class="text-white border-bottom" href="#">FLUXWINGS SOLUTIONS</a>. All Rights Reserved.</p>
+    </div>
+    {% endblock %}
+</body>
+</html>
